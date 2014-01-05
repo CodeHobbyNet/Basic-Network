@@ -10,8 +10,8 @@ namespace BasicNetwork
 	{//A link connecting 2 nodes. It can be directed or undirected.
 		private:
 			int cost;//The cost of the link.
-			Node *node1;//One of the nodes if undirected. The beginning node if directed.
-			Node *node2;//The other node if undirected. The end node if directed.
+			Node &node1;//One of the nodes if undirected. The beginning node if directed.
+			Node &node2;//The other node if undirected. The end node if directed.
 			bool directed;//Directed if true, undirected if false.
 			int maxCapacity;//THe maximum amount of whatever that can move through the link. For example, this could be the maximum amount of current flowing through a wire or the maximum number of cars that can move througha street per unit of time.
 			std::string name;//The name of the link, possibly the display name.
@@ -21,10 +21,10 @@ namespace BasicNetwork
 		public:
 			void setCost( int newCost );
 			int getCost();
-			void setFirstNode( Node *newNode );
-			int getFirstNode();
-			void setSecondNode( Node *newNode );
-			int getSecondNode();
+			void setFirstNode( Node &newNode );
+			Node &getFirstNode();
+			void setSecondNode( Node &newNode );
+			Node &getSecondNode();
 			void setDirected( bool newDirected );//True means directed, false means undirected.
 			int getDirected();//True means directed, false means undirected.
 			void setMaxCapacity( int newMaxCapacity );
